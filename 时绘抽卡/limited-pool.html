@@ -158,18 +158,18 @@
         /* 翻牌效果区域 */
         .card-reveal-area {
             min-height: 300px;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             gap: 15px;
-            justify-content: center;
+            justify-items: center;
             align-items: center;
             padding: 20px;
         }
 
         .card-container {
             perspective: 1000px;
-            width: 180px;
-            height: 260px;
+            width: 140px;
+            height: 200px;
         }
 
         .card {
@@ -497,13 +497,14 @@
 
             .card-reveal-area {
                 min-height: 250px;
+                grid-template-columns: repeat(4, 1fr);
                 gap: 10px;
                 padding: 15px;
             }
 
             .card-container {
-                width: 150px;
-                height: 220px;
+                width: 120px;
+                height: 170px;
             }
 
             .card-front {
@@ -564,7 +565,7 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 5px;
             }
 
             .container {
@@ -573,103 +574,105 @@
 
             .navbar {
                 position: fixed;
-                top: 10px;
-                right: 10px;
-                left: 10px;
-                padding: 8px 10px;
-                border-radius: 8px;
+                top: 5px;
+                right: 5px;
+                left: 5px;
+                padding: 5px 8px;
+                border-radius: 6px;
                 z-index: 1000;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                gap: 8px;
+                gap: 5px;
             }
 
             .navbar select,
             .navbar button {
                 flex: 1;
-                min-width: 100px;
-                padding: 6px 10px;
-                font-size: 12px;
+                min-width: 70px;
+                padding: 4px 6px;
+                font-size: 10px;
             }
 
             .header {
-                margin: 70px 0 15px 0;
+                margin: 45px 0 8px 0;
             }
 
             h1 {
-                font-size: 1.4em;
-                margin-bottom: 6px;
-            }
-
-            .pool-type-badge {
-                font-size: 0.8em;
-                padding: 4px 12px;
-            }
-
-            .pity-info {
-                padding: 12px 15px;
-                margin-bottom: 15px;
-                border-left: 3px solid #ffc107;
-            }
-
-            .pity-info p {
-                font-size: 0.9em;
-                margin: 4px 0;
-            }
-
-            .draw-section {
-                padding: 15px;
-                border-radius: 12px;
-            }
-
-            .draw-buttons {
-                gap: 12px;
-                margin-bottom: 15px;
-            }
-
-            .draw-btn {
-                padding: 12px 15px;
-                font-size: 0.95em;
-                border-radius: 8px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            }
-
-            .draw-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            }
-
-            .card-reveal-area {
-                min-height: 200px;
-                gap: 8px;
-                padding: 10px;
-            }
-
-            .card-container {
-                width: 120px;
-                height: 180px;
-            }
-
-            .card-face {
-                padding: 10px;
-            }
-
-            .card-front {
-                font-size: 2em;
-            }
-
-            .card-rarity {
-                font-size: 1.4em;
-                margin-bottom: 6px;
-            }
-
-            .card-name {
-                font-size: 0.85em;
+                font-size: 1.1em;
                 margin-bottom: 3px;
             }
 
-            .card-character {
+            .pool-type-badge {
+                font-size: 0.65em;
+                padding: 2px 6px;
+            }
+
+            .pity-info {
+                padding: 6px 8px;
+                margin-bottom: 6px;
+                border-left: 2px solid #ffc107;
+            }
+
+            .pity-info p {
+                font-size: 0.7em;
+                margin: 1px 0;
+            }
+
+            .draw-section {
+                padding: 8px;
+                border-radius: 8px;
+            }
+
+            .draw-buttons {
+                gap: 6px;
+                margin-bottom: 6px;
+            }
+
+            .draw-btn {
+                padding: 7px 8px;
+                font-size: 0.8em;
+                border-radius: 6px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .draw-btn:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 3px 7px rgba(0,0,0,0.12);
+            }
+
+            .card-reveal-area {
+                min-height: 130px;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .card-container {
+                width: 55px;
+                height: 78px;
+            }
+
+            .card-face {
+                padding: 4px;
+                border-radius: 5px;
+            }
+
+            .card-front {
+                font-size: 1em;
+            }
+
+            .card-rarity {
                 font-size: 0.75em;
+                margin-bottom: 1px;
+            }
+
+            .card-name {
+                font-size: 0.5em;
+                margin-bottom: 1px;
+            }
+
+            .card-character {
+                font-size: 0.45em;
             }
 
             .info-section {
@@ -816,13 +819,14 @@
 
             .card-reveal-area {
                 min-height: 150px;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 6px;
                 padding: 8px;
             }
 
             .card-container {
-                width: 100px;
-                height: 150px;
+                width: 90px;
+                height: 130px;
             }
 
             .card-face {
