@@ -100,6 +100,127 @@
             padding-bottom: 10px;
             border-bottom: 3px solid #a8d4e6;
         }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+                margin: 25px 0 15px 0;
+            }
+
+            .pool-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 15px;
+            }
+
+            .pool-card {
+                padding: 20px;
+            }
+
+            .pool-title {
+                font-size: 1.1em;
+            }
+
+            .pool-info {
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                margin: 20px 0 12px 0;
+            }
+
+            .pool-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 12px;
+            }
+
+            .pool-card {
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .pool-card:hover {
+                transform: translateY(-3px);
+            }
+
+            .pool-title {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+
+            .pool-type {
+                font-size: 0.8em;
+                padding: 4px 10px;
+            }
+
+            .pool-info {
+                font-size: 0.8em;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.3em;
+                margin-bottom: 15px;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+
+            .section-title {
+                font-size: 1.1em;
+                margin: 15px 0 10px 0;
+            }
+
+            .pool-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .pool-card {
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .pool-title {
+                font-size: 0.95em;
+                margin-bottom: 6px;
+            }
+
+            .pool-type {
+                font-size: 0.75em;
+                padding: 3px 8px;
+            }
+
+            .pool-info {
+                font-size: 0.75em;
+                line-height: 1.4;
+            }
+        }
     </style>
 </head>
 <body>
