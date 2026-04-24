@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时绘抽卡系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5a6c7d;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .pool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .pool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #a8d4e6;
+        }
+
+        .pool-card.permanent {
+            background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+        }
+
+        .pool-card.limited {
+            background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+        }
+
+        .pool-title {
+            font-size: 1.3em;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .pool-type {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .pool-type.permanent {
+            background: #e6f3ff;
+            color: #2b6cb0;
+        }
+
+        .pool-type.limited {
+            background: #ffe6e6;
+            color: #c53030;
+        }
+
+        .pool-info {
+            color: #718096;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #5a6c7d;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #a8d4e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ 时绘抽卡系统 ✨</h1>
+        
+        <h2 class="section-title">常驻池</h2>
+        <div class="pool-grid">
+            <div class="pool-card permanent" onclick="location.href='permanent-pool.html'">
+                <div class="pool-type permanent">常驻</div>
+                <div class="pool-title">常驻卡池</div>
+                <div class="pool-info">
+                    SSR: 15张 | SR: 45张 | R: 31张<br>
+                    80抽保底SSR
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">限定池</h2>
+        <div class="pool-grid" id="limitedPools">
+            <!-- 限定池将通过JavaScript动态生成 -->
+        </div>
+    </div>
+
+    <script>
+        // 限定池列表
+        const limitedPools = [
+            "庄园诡戏",
+            "书中童话：魔女的冒险",
+            "书中童话II：魔女的复苏",
+            "命运回廊",
+            "天若有情·千秋渡",
+            "雾隐都市",
+            "瑰梦奇境·上篇",
+            "瑰梦奇境·下篇",
+            "二分的荆棘路",
+            "醉梦浮汤",
+            "神陨纪元·第一阶段",
+            "神陨纪元·第二阶段",
+            "理想乡的黄昏",
+            "目标：战争都市",
+            "今夕长相守",
+            "与卿书",
+            "湛蓝海岛",
+            "圣塞西尔魔法学院·上篇",
+            "圣塞西尔魔法学院·下篇",
+            "遗落的血脉",
+            "绘梦平安京",
+            "诸界归一",
+            "录异记",
+            "珠宝之心",
+            "漫长的箴言",
+            "漆灯夜照",
+            "人间画外",
+            "繁花之吻",
+            "罪印残响",
+            "昨日晴空",
+            "若最后之梦熄灭",
+            "与你的杯间漫游"
+        ];
+
+        // 生成限定池卡片
+        const limitedPoolsContainer = document.getElementById('limitedPools');
+        limitedPools.forEach((poolName, index) => {
+            const poolCard = document.createElement('div');
+            poolCard.className = 'pool-card limited';
+            poolCard.onclick = () => location.href = `limited-pool.html?pool=${encodeURIComponent(poolName)}`;
+            
+            poolCard.innerHTML = `
+                <div class="pool-type limited">限定</div>
+                <div class="pool-title">${poolName}</div>
+                <div class="pool-info">
+                    含常驻池所有卡牌 + 限定SSR<br>
+                    80抽保底SSR | 160抽保底限定SSR
+                </div>
+            `;
+            
+            limitedPoolsContainer.appendChild(poolCard);
+        });
+    </script>
+</body>
+</html>
