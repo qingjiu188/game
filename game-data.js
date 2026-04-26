@@ -366,6 +366,15 @@ const gameData = {
                 { name: "永坠无间", character: "司岚" },
                 { name: "丝网缚生", character: "叶瑄" }
             ]
+        },
+        "风蚀之歌": {
+            ssr: [
+                { name: "倾世惊鸿", character: "艾因" },
+                { name: "浮沤一春", character: "路辰" },
+                { name: "炳如日星", character: "罗夏" },
+                { name: "此身何渡", character: "司岚" },
+                { name: "逆轨归心", character: "叶瑄" }
+            ]
         }
     }
 };
